@@ -1,0 +1,41 @@
+{
+  "naive": {
+    "success": false,
+    "scores": {
+      "task_completion": 0.5,
+      "efficiency": 0.5,
+      "resilience": 0.6,
+      "strategy": 0.3,
+      "composite": 0.475
+    },
+    "steps": [
+      "product_page",
+      "cart_page",
+      "checkout_page"
+    ],
+    "actions": 30,
+    "duration": 106.6750328540802
+  },
+  "evolved": {
+    "success": true,
+    "scores": {
+      "task_completion": 1.0,
+      "efficiency": 0.8,
+      "resilience": 1.0,
+      "strategy": 0.9,
+      "composite": 0.945
+    },
+    "steps": [
+      "product_page",
+      "cart_page",
+      "checkout_page",
+      "success"
+    ],
+    "actions": 16,
+    "duration": 54.88380265235901
+  },
+  "winner": "EVOLVED",
+  "delta": 0.47,
+  "gauntlet_level": 3,
+  "max_actions": 25
+}

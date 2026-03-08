@@ -1,0 +1,1097 @@
+{
+  "champion": {
+    "genome_id": "5bfceb0e",
+    "generation": 0,
+    "genes": "navigation=nav_observe_first | element_selection=elem_text_match | error_recovery=recovery_adaptive | distraction_handling=distract_assess_then_dismiss | form_interaction=form_label_match | verification=verify_defensive",
+    "mutation_history": [],
+    "success": true,
+    "steps_completed": [
+      "product_page",
+      "cart_page",
+      "checkout_page",
+      "success"
+    ],
+    "total_actions": 12,
+    "duration": 36.11237931251526,
+    "scores": {
+      "task_completion": 1.0,
+      "efficiency": 1.0,
+      "resilience": 1.0,
+      "strategy": 1.0,
+      "composite": 1.0
+    },
+    "fitness": 1.0,
+    "errors": [],
+    "num_screenshots": 5,
+    "replay_url": null
+  },
+  "all_results": [
+    {
+      "genome_id": "5bfceb0e",
+      "generation": 0,
+      "genes": "navigation=nav_observe_first | element_selection=elem_text_match | error_recovery=recovery_adaptive | distraction_handling=distract_assess_then_dismiss | form_interaction=form_label_match | verification=verify_defensive",
+      "mutation_history": [],
+      "success": true,
+      "steps_completed": [
+        "product_page",
+        "cart_page",
+        "checkout_page",
+        "success"
+      ],
+      "total_actions": 12,
+      "duration": 36.11237931251526,
+      "scores": {
+        "task_completion": 1.0,
+        "efficiency": 1.0,
+        "resilience": 1.0,
+        "strategy": 1.0,
+        "composite": 1.0
+      },
+      "fitness": 1.0,
+      "errors": [],
+      "num_screenshots": 5,
+      "replay_url": null
+    },
+    {
+      "genome_id": "69c94492",
+      "generation": 0,
+      "genes": "navigation=nav_sequential | element_selection=elem_structural | error_recovery=recovery_diagnostic | distraction_handling=distract_assess_then_dismiss | form_interaction=form_placeholder_match | verification=verify_defensive",
+      "mutation_history": [],
+      "success": true,
+      "steps_completed": [
+        "product_page",
+        "cart_page",
+        "checkout_page",
+        "success"
+      ],
+      "total_actions": 12,
+      "duration": 38.34373903274536,
+      "scores": {
+        "task_completion": 1.0,
+        "efficiency": 1.0,
+        "resilience": 1.0,
+        "strategy": 1.0,
+        "composite": 1.0
+      },
+      "fitness": 1.0,
+      "errors": [],
+      "num_screenshots": 5,
+      "replay_url": null
+    },
+    {
+      "genome_id": "cddbe5d8",
+      "generation": 0,
+      "genes": "navigation=nav_observe_first | element_selection=elem_structural | error_recovery=recovery_diagnostic | distraction_handling=distract_systematic_clear | form_interaction=form_contextual | verification=verify_url",
+      "mutation_history": [],
+      "success": true,
+      "steps_completed": [
+        "product_page",
+        "cart_page",
+        "checkout_page",
+        "success"
+      ],
+      "total_actions": 12,
+      "duration": 28.09581708908081,
+      "scores": {
+        "task_completion": 1.0,
+        "efficiency": 1.0,
+        "resilience": 1.0,
+        "strategy": 1.0,
+        "composite": 1.0
+      },
+      "fitness": 1.0,
+      "errors": [],
+      "num_screenshots": 5,
+      "replay_url": null
+    },
+    {
+      "genome_id": "90d3c71d",
+      "generation": 0,
+      "genes": "navigation=nav_goal_decompose | element_selection=elem_structural | error_recovery=recovery_retry | distraction_handling=distract_systematic_clear | form_interaction=form_contextual | verification=verify_content",
+      "mutation_history": [],
+      "success": true,
+      "steps_completed": [
+        "cart_page",
+        "checkout_page",
+        "success"
+      ],
+      "total_actions": 18,
+      "duration": 56.907273054122925,
+      "scores": {
+        "task_completion": 1.0,
+        "efficiency": 0.8,
+        "resilience": 1.0,
+        "strategy": 1.0,
+        "composite": 0.97
+      },
+      "fitness": 0.97,
+      "errors": [],
+      "num_screenshots": 13,
+      "replay_url": null
+    },
+    {
+      "genome_id": "5bfceb0e",
+      "generation": 0,
+      "genes": "navigation=nav_observe_first | element_selection=elem_text_match | error_recovery=recovery_adaptive | distraction_handling=distract_assess_then_dismiss | form_interaction=form_label_match | verification=verify_defensive",
+      "mutation_history": [],
+      "success": true,
+      "steps_completed": [
+        "product_page",
+        "cart_page",
+        "checkout_page",
+        "success"
+      ],
+      "total_actions": 16,
+      "duration": 52.636627435684204,
+      "scores": {
+        "task_completion": 1.0,
+        "efficiency": 0.8,
+        "resilience": 1.0,
+        "strategy": 1.0,
+        "composite": 0.97
+      },
+      "fitness": 0.97,
+      "errors": [],
+      "num_screenshots": 9,
+      "replay_url": null
+    },
+    {
+      "genome_id": "69c94492",
+      "generation": 0,
+      "genes": "navigation=nav_sequential | element_selection=elem_structural | error_recovery=recovery_diagnostic | distraction_handling=distract_assess_then_dismiss | form_interaction=form_placeholder_match | verification=verify_defensive",
+      "mutation_history": [],
+      "success": true,
+      "steps_completed": [
+        "product_page",
+        "cart_page",
+        "checkout_page",
+        "success"
+      ],
+      "total_actions": 18,
+      "duration": 61.537243366241455,
+      "scores": {
+        "task_completion": 1.0,
+        "efficiency": 0.8,
+        "resilience": 0.9,
+        "strategy": 1.0,
+        "composite": 0.945
+      },
+      "fitness": 0.945,
+      "errors": [],
+      "num_screenshots": 10,
+      "replay_url": null
+    },
+    {
+      "genome_id": "c12987c9",
+      "generation": 1,
+      "genes": "navigation=nav_observe_first | element_selection=elem_semantic | error_recovery=recovery_adaptive | distraction_handling=distract_dismiss_fast | form_interaction=form_placeholder_match | verification=verify_defensive",
+      "mutation_history": [
+        "crossover(5bfceb0e\u00d769c94492 at 3)",
+        "mutate(elem_text_match\u2192elem_semantic)",
+        "mutate(distract_assess_then_dismiss\u2192distract_dismiss_fast)"
+      ],
+      "success": true,
+      "steps_completed": [
+        "product_page",
+        "cart_page",
+        "checkout_page",
+        "success"
+      ],
+      "total_actions": 16,
+      "duration": 56.48083162307739,
+      "scores": {
+        "task_completion": 1.0,
+        "efficiency": 0.8,
+        "resilience": 1.0,
+        "strategy": 1.0,
+        "composite": 0.97
+      },
+      "fitness": 0.97,
+      "errors": [],
+      "num_screenshots": 9,
+      "replay_url": null
+    },
+    {
+      "genome_id": "bf82b7f1",
+      "generation": 1,
+      "genes": "navigation=nav_sequential | element_selection=elem_text_match | error_recovery=recovery_adaptive | distraction_handling=distract_systematic_clear | form_interaction=form_label_match | verification=verify_defensive",
+      "mutation_history": [
+        "crossover(69c94492\u00d75bfceb0e at 1)",
+        "mutate(distract_assess_then_dismiss\u2192distract_systematic_clear)"
+      ],
+      "success": true,
+      "steps_completed": [
+        "product_page",
+        "cart_page",
+        "checkout_page",
+        "success"
+      ],
+      "total_actions": 16,
+      "duration": 68.850909948349,
+      "scores": {
+        "task_completion": 1.0,
+        "efficiency": 0.8,
+        "resilience": 1.0,
+        "strategy": 1.0,
+        "composite": 0.97
+      },
+      "fitness": 0.97,
+      "errors": [],
+      "num_screenshots": 15,
+      "replay_url": null
+    },
+    {
+      "genome_id": "f71c6c8e",
+      "generation": 1,
+      "genes": "navigation=nav_sequential | element_selection=elem_text_match | error_recovery=recovery_adaptive | distraction_handling=distract_dismiss_fast | form_interaction=form_label_match | verification=verify_defensive",
+      "mutation_history": [
+        "crossover(69c94492\u00d75bfceb0e at 1)",
+        "mutate(distract_assess_then_dismiss\u2192distract_dismiss_fast)"
+      ],
+      "success": true,
+      "steps_completed": [
+        "product_page",
+        "cart_page",
+        "checkout_page",
+        "success"
+      ],
+      "total_actions": 16,
+      "duration": 62.388593435287476,
+      "scores": {
+        "task_completion": 1.0,
+        "efficiency": 0.8,
+        "resilience": 1.0,
+        "strategy": 1.0,
+        "composite": 0.97
+      },
+      "fitness": 0.97,
+      "errors": [],
+      "num_screenshots": 15,
+      "replay_url": null
+    },
+    {
+      "genome_id": "89409e14",
+      "generation": 1,
+      "genes": "navigation=nav_observe_first | element_selection=elem_structural | error_recovery=recovery_diagnostic | distraction_handling=distract_systematic_clear | form_interaction=form_contextual | verification=verify_defensive",
+      "mutation_history": [
+        "crossover(69c94492\u00d75bfceb0e at 3)",
+        "mutate(nav_sequential\u2192nav_observe_first)",
+        "mutate(distract_assess_then_dismiss\u2192distract_systematic_clear)",
+        "mutate(form_label_match\u2192form_contextual)"
+      ],
+      "success": true,
+      "steps_completed": [
+        "product_page",
+        "cart_page",
+        "checkout_page",
+        "success"
+      ],
+      "total_actions": 16,
+      "duration": 52.9798698425293,
+      "scores": {
+        "task_completion": 1.0,
+        "efficiency": 0.8,
+        "resilience": 1.0,
+        "strategy": 1.0,
+        "composite": 0.97
+      },
+      "fitness": 0.97,
+      "errors": [],
+      "num_screenshots": 9,
+      "replay_url": null
+    },
+    {
+      "genome_id": "fe1dd5d0",
+      "generation": 1,
+      "genes": "navigation=nav_goal_decompose | element_selection=elem_semantic | error_recovery=recovery_adaptive | distraction_handling=distract_assess_then_dismiss | form_interaction=form_label_match | verification=verify_defensive",
+      "mutation_history": [
+        "crossover(5bfceb0e\u00d769c94492 at 2)",
+        "mutate(nav_observe_first\u2192nav_goal_decompose)",
+        "mutate(elem_text_match\u2192elem_semantic)",
+        "mutate(recovery_diagnostic\u2192recovery_adaptive)",
+        "mutate(form_placeholder_match\u2192form_label_match)"
+      ],
+      "success": true,
+      "steps_completed": [
+        "product_page",
+        "cart_page",
+        "checkout_page",
+        "success"
+      ],
+      "total_actions": 16,
+      "duration": 41.429840326309204,
+      "scores": {
+        "task_completion": 1.0,
+        "efficiency": 0.8,
+        "resilience": 1.0,
+        "strategy": 1.0,
+        "composite": 0.97
+      },
+      "fitness": 0.97,
+      "errors": [],
+      "num_screenshots": 9,
+      "replay_url": null
+    },
+    {
+      "genome_id": "71a1e54e",
+      "generation": 1,
+      "genes": "navigation=nav_sequential | element_selection=elem_structural | error_recovery=recovery_diagnostic | distraction_handling=distract_dismiss_fast | form_interaction=form_label_match | verification=verify_content",
+      "mutation_history": [
+        "crossover(69c94492\u00d75bfceb0e at 5)",
+        "mutate(distract_assess_then_dismiss\u2192distract_dismiss_fast)",
+        "mutate(form_placeholder_match\u2192form_label_match)",
+        "mutate(verify_defensive\u2192verify_content)"
+      ],
+      "success": true,
+      "steps_completed": [
+        "product_page",
+        "cart_page",
+        "checkout_page",
+        "success"
+      ],
+      "total_actions": 16,
+      "duration": 68.04796004295349,
+      "scores": {
+        "task_completion": 1.0,
+        "efficiency": 0.8,
+        "resilience": 1.0,
+        "strategy": 1.0,
+        "composite": 0.97
+      },
+      "fitness": 0.97,
+      "errors": [],
+      "num_screenshots": 15,
+      "replay_url": null
+    },
+    {
+      "genome_id": "5bfceb0e",
+      "generation": 0,
+      "genes": "navigation=nav_observe_first | element_selection=elem_text_match | error_recovery=recovery_adaptive | distraction_handling=distract_assess_then_dismiss | form_interaction=form_label_match | verification=verify_defensive",
+      "mutation_history": [],
+      "success": true,
+      "steps_completed": [
+        "product_page",
+        "cart_page",
+        "checkout_page",
+        "success"
+      ],
+      "total_actions": 18,
+      "duration": 64.6201102733612,
+      "scores": {
+        "task_completion": 1.0,
+        "efficiency": 0.8,
+        "resilience": 1.0,
+        "strategy": 1.0,
+        "composite": 0.97
+      },
+      "fitness": 0.97,
+      "errors": [],
+      "num_screenshots": 11,
+      "replay_url": null
+    },
+    {
+      "genome_id": "c12987c9",
+      "generation": 1,
+      "genes": "navigation=nav_observe_first | element_selection=elem_semantic | error_recovery=recovery_adaptive | distraction_handling=distract_dismiss_fast | form_interaction=form_placeholder_match | verification=verify_defensive",
+      "mutation_history": [
+        "crossover(5bfceb0e\u00d769c94492 at 3)",
+        "mutate(elem_text_match\u2192elem_semantic)",
+        "mutate(distract_assess_then_dismiss\u2192distract_dismiss_fast)"
+      ],
+      "success": true,
+      "steps_completed": [
+        "product_page",
+        "cart_page",
+        "checkout_page",
+        "success"
+      ],
+      "total_actions": 18,
+      "duration": 63.85747241973877,
+      "scores": {
+        "task_completion": 1.0,
+        "efficiency": 0.8,
+        "resilience": 1.0,
+        "strategy": 1.0,
+        "composite": 0.97
+      },
+      "fitness": 0.97,
+      "errors": [],
+      "num_screenshots": 11,
+      "replay_url": null
+    },
+    {
+      "genome_id": "bf82b7f1",
+      "generation": 1,
+      "genes": "navigation=nav_sequential | element_selection=elem_text_match | error_recovery=recovery_adaptive | distraction_handling=distract_systematic_clear | form_interaction=form_label_match | verification=verify_defensive",
+      "mutation_history": [
+        "crossover(69c94492\u00d75bfceb0e at 1)",
+        "mutate(distract_assess_then_dismiss\u2192distract_systematic_clear)"
+      ],
+      "success": true,
+      "steps_completed": [
+        "product_page",
+        "cart_page",
+        "checkout_page",
+        "success"
+      ],
+      "total_actions": 17,
+      "duration": 56.26654362678528,
+      "scores": {
+        "task_completion": 1.0,
+        "efficiency": 0.8,
+        "resilience": 1.0,
+        "strategy": 1.0,
+        "composite": 0.97
+      },
+      "fitness": 0.97,
+      "errors": [],
+      "num_screenshots": 9,
+      "replay_url": null
+    },
+    {
+      "genome_id": "f71c6c8e",
+      "generation": 1,
+      "genes": "navigation=nav_sequential | element_selection=elem_text_match | error_recovery=recovery_adaptive | distraction_handling=distract_dismiss_fast | form_interaction=form_label_match | verification=verify_defensive",
+      "mutation_history": [
+        "crossover(69c94492\u00d75bfceb0e at 1)",
+        "mutate(distract_assess_then_dismiss\u2192distract_dismiss_fast)"
+      ],
+      "success": true,
+      "steps_completed": [
+        "product_page",
+        "cart_page",
+        "checkout_page",
+        "success"
+      ],
+      "total_actions": 19,
+      "duration": 76.436026096344,
+      "scores": {
+        "task_completion": 1.0,
+        "efficiency": 0.8,
+        "resilience": 1.0,
+        "strategy": 1.0,
+        "composite": 0.97
+      },
+      "fitness": 0.97,
+      "errors": [],
+      "num_screenshots": 17,
+      "replay_url": null
+    },
+    {
+      "genome_id": "0df71b7c",
+      "generation": 2,
+      "genes": "navigation=nav_sequential | element_selection=elem_text_match | error_recovery=recovery_adaptive | distraction_handling=distract_systematic_clear | form_interaction=form_contextual | verification=verify_defensive",
+      "mutation_history": [
+        "crossover(f71c6c8e\u00d7bf82b7f1 at 2)",
+        "mutate(form_label_match\u2192form_contextual)"
+      ],
+      "success": true,
+      "steps_completed": [
+        "product_page",
+        "cart_page",
+        "checkout_page",
+        "success"
+      ],
+      "total_actions": 18,
+      "duration": 71.8976218700409,
+      "scores": {
+        "task_completion": 1.0,
+        "efficiency": 0.8,
+        "resilience": 1.0,
+        "strategy": 1.0,
+        "composite": 0.97
+      },
+      "fitness": 0.97,
+      "errors": [],
+      "num_screenshots": 17,
+      "replay_url": null
+    },
+    {
+      "genome_id": "a5de2eda",
+      "generation": 2,
+      "genes": "navigation=nav_observe_first | element_selection=elem_semantic | error_recovery=recovery_adaptive | distraction_handling=distract_assess_then_dismiss | form_interaction=form_label_match | verification=verify_defensive",
+      "mutation_history": [
+        "crossover(c12987c9\u00d75bfceb0e at 2)"
+      ],
+      "success": true,
+      "steps_completed": [
+        "product_page",
+        "cart_page",
+        "checkout_page",
+        "success"
+      ],
+      "total_actions": 22,
+      "duration": 60.27535152435303,
+      "scores": {
+        "task_completion": 1.0,
+        "efficiency": 0.5,
+        "resilience": 1.0,
+        "strategy": 1.0,
+        "composite": 0.9249999999999999
+      },
+      "fitness": 0.9249999999999999,
+      "errors": [],
+      "num_screenshots": 10,
+      "replay_url": null
+    },
+    {
+      "genome_id": "e1b386e3",
+      "generation": 2,
+      "genes": "navigation=nav_observe_first | element_selection=elem_text_match | error_recovery=recovery_retry_evolved | distraction_handling=distract_systematic_clear | form_interaction=form_placeholder_match | verification=verify_defensive",
+      "mutation_history": [
+        "crossover(5bfceb0e\u00d7bf82b7f1 at 2)",
+        "mutate(recovery_adaptive\u2192recovery_retry)",
+        "mutate(form_label_match\u2192form_placeholder_match)",
+        "llm_evolve(recovery_retry\u2192recovery_retry_evolved)"
+      ],
+      "success": true,
+      "steps_completed": [
+        "product_page",
+        "cart_page",
+        "checkout_page",
+        "success"
+      ],
+      "total_actions": 20,
+      "duration": 64.30422925949097,
+      "scores": {
+        "task_completion": 1.0,
+        "efficiency": 0.8,
+        "resilience": 1.0,
+        "strategy": 1.0,
+        "composite": 0.97
+      },
+      "fitness": 0.97,
+      "errors": [],
+      "num_screenshots": 13,
+      "replay_url": null
+    },
+    {
+      "genome_id": "57cf774b",
+      "generation": 2,
+      "genes": "navigation=nav_goal_decompose | element_selection=elem_text_match | error_recovery=recovery_adaptive | distraction_handling=distract_systematic_clear | form_interaction=form_label_match | verification=verify_url",
+      "mutation_history": [
+        "crossover(f71c6c8e\u00d75bfceb0e at 4)",
+        "mutate(nav_sequential\u2192nav_goal_decompose)",
+        "mutate(distract_dismiss_fast\u2192distract_systematic_clear)",
+        "mutate(verify_defensive\u2192verify_url)"
+      ],
+      "success": true,
+      "steps_completed": [
+        "product_page",
+        "cart_page",
+        "checkout_page",
+        "success"
+      ],
+      "total_actions": 20,
+      "duration": 64.94258165359497,
+      "scores": {
+        "task_completion": 1.0,
+        "efficiency": 0.8,
+        "resilience": 1.0,
+        "strategy": 1.0,
+        "composite": 0.97
+      },
+      "fitness": 0.97,
+      "errors": [],
+      "num_screenshots": 12,
+      "replay_url": null
+    },
+    {
+      "genome_id": "3098e401",
+      "generation": 2,
+      "genes": "navigation=nav_observe_first | element_selection=elem_structural | error_recovery=recovery_retry_evolved | distraction_handling=distract_systematic_clear | form_interaction=form_label_match | verification=verify_url",
+      "mutation_history": [
+        "crossover(c12987c9\u00d7bf82b7f1 at 2)",
+        "mutate(elem_semantic\u2192elem_structural)",
+        "mutate(recovery_adaptive\u2192recovery_retry)",
+        "mutate(verify_defensive\u2192verify_url)",
+        "llm_evolve(recovery_retry\u2192recovery_retry_evolved)"
+      ],
+      "success": true,
+      "steps_completed": [
+        "product_page",
+        "cart_page",
+        "checkout_page",
+        "success"
+      ],
+      "total_actions": 20,
+      "duration": 57.11022686958313,
+      "scores": {
+        "task_completion": 1.0,
+        "efficiency": 0.8,
+        "resilience": 1.0,
+        "strategy": 1.0,
+        "composite": 0.97
+      },
+      "fitness": 0.97,
+      "errors": [],
+      "num_screenshots": 12,
+      "replay_url": null
+    },
+    {
+      "genome_id": "e737990c",
+      "generation": 2,
+      "genes": "navigation=nav_sequential | element_selection=elem_text_match | error_recovery=recovery_adaptive | distraction_handling=distract_systematic_clear | form_interaction=form_placeholder_match_evolved | verification=verify_defensive",
+      "mutation_history": [
+        "crossover(bf82b7f1\u00d7f71c6c8e at 5)",
+        "mutate(form_label_match\u2192form_placeholder_match)",
+        "llm_evolve(form_placeholder_match\u2192form_placeholder_match_evolved)"
+      ],
+      "success": true,
+      "steps_completed": [
+        "product_page",
+        "cart_page",
+        "checkout_page",
+        "success"
+      ],
+      "total_actions": 18,
+      "duration": 82.01416015625,
+      "scores": {
+        "task_completion": 1.0,
+        "efficiency": 0.8,
+        "resilience": 1.0,
+        "strategy": 1.0,
+        "composite": 0.97
+      },
+      "fitness": 0.97,
+      "errors": [],
+      "num_screenshots": 17,
+      "replay_url": null
+    },
+    {
+      "genome_id": "5bfceb0e",
+      "generation": 0,
+      "genes": "navigation=nav_observe_first | element_selection=elem_text_match | error_recovery=recovery_adaptive | distraction_handling=distract_assess_then_dismiss | form_interaction=form_label_match | verification=verify_defensive",
+      "mutation_history": [],
+      "success": true,
+      "steps_completed": [
+        "product_page",
+        "cart_page",
+        "checkout_page",
+        "success"
+      ],
+      "total_actions": 18,
+      "duration": 56.56059122085571,
+      "scores": {
+        "task_completion": 1.0,
+        "efficiency": 0.8,
+        "resilience": 1.0,
+        "strategy": 1.0,
+        "composite": 0.97
+      },
+      "fitness": 0.97,
+      "errors": [],
+      "num_screenshots": 9,
+      "replay_url": null
+    },
+    {
+      "genome_id": "c12987c9",
+      "generation": 1,
+      "genes": "navigation=nav_observe_first | element_selection=elem_semantic | error_recovery=recovery_adaptive | distraction_handling=distract_dismiss_fast | form_interaction=form_placeholder_match | verification=verify_defensive",
+      "mutation_history": [
+        "crossover(5bfceb0e\u00d769c94492 at 3)",
+        "mutate(elem_text_match\u2192elem_semantic)",
+        "mutate(distract_assess_then_dismiss\u2192distract_dismiss_fast)"
+      ],
+      "success": true,
+      "steps_completed": [
+        "product_page",
+        "cart_page",
+        "checkout_page",
+        "success"
+      ],
+      "total_actions": 20,
+      "duration": 63.754241943359375,
+      "scores": {
+        "task_completion": 1.0,
+        "efficiency": 0.8,
+        "resilience": 1.0,
+        "strategy": 0.9,
+        "composite": 0.945
+      },
+      "fitness": 0.945,
+      "errors": [],
+      "num_screenshots": 13,
+      "replay_url": null
+    },
+    {
+      "genome_id": "bf82b7f1",
+      "generation": 1,
+      "genes": "navigation=nav_sequential | element_selection=elem_text_match | error_recovery=recovery_adaptive | distraction_handling=distract_systematic_clear | form_interaction=form_label_match | verification=verify_defensive",
+      "mutation_history": [
+        "crossover(69c94492\u00d75bfceb0e at 1)",
+        "mutate(distract_assess_then_dismiss\u2192distract_systematic_clear)"
+      ],
+      "success": true,
+      "steps_completed": [
+        "product_page",
+        "cart_page",
+        "checkout_page",
+        "success"
+      ],
+      "total_actions": 17,
+      "duration": 52.85223722457886,
+      "scores": {
+        "task_completion": 1.0,
+        "efficiency": 0.8,
+        "resilience": 1.0,
+        "strategy": 1.0,
+        "composite": 0.97
+      },
+      "fitness": 0.97,
+      "errors": [],
+      "num_screenshots": 11,
+      "replay_url": null
+    },
+    {
+      "genome_id": "f71c6c8e",
+      "generation": 1,
+      "genes": "navigation=nav_sequential | element_selection=elem_text_match | error_recovery=recovery_adaptive | distraction_handling=distract_dismiss_fast | form_interaction=form_label_match | verification=verify_defensive",
+      "mutation_history": [
+        "crossover(69c94492\u00d75bfceb0e at 1)",
+        "mutate(distract_assess_then_dismiss\u2192distract_dismiss_fast)"
+      ],
+      "success": true,
+      "steps_completed": [
+        "product_page",
+        "cart_page",
+        "checkout_page",
+        "success"
+      ],
+      "total_actions": 24,
+      "duration": 116.71934366226196,
+      "scores": {
+        "task_completion": 1.0,
+        "efficiency": 0.5,
+        "resilience": 1.0,
+        "strategy": 1.0,
+        "composite": 0.9249999999999999
+      },
+      "fitness": 0.9249999999999999,
+      "errors": [],
+      "num_screenshots": 14,
+      "replay_url": null
+    },
+    {
+      "genome_id": "0df71b7c",
+      "generation": 2,
+      "genes": "navigation=nav_sequential | element_selection=elem_text_match | error_recovery=recovery_adaptive | distraction_handling=distract_systematic_clear | form_interaction=form_contextual | verification=verify_defensive",
+      "mutation_history": [
+        "crossover(f71c6c8e\u00d7bf82b7f1 at 2)",
+        "mutate(form_label_match\u2192form_contextual)"
+      ],
+      "success": true,
+      "steps_completed": [
+        "product_page",
+        "cart_page",
+        "checkout_page",
+        "success"
+      ],
+      "total_actions": 18,
+      "duration": 69.35825276374817,
+      "scores": {
+        "task_completion": 1.0,
+        "efficiency": 0.8,
+        "resilience": 1.0,
+        "strategy": 1.0,
+        "composite": 0.97
+      },
+      "fitness": 0.97,
+      "errors": [],
+      "num_screenshots": 12,
+      "replay_url": null
+    },
+    {
+      "genome_id": "5d4c5117",
+      "generation": 3,
+      "genes": "navigation=nav_goal_decompose | element_selection=elem_text_match | error_recovery=recovery_adaptive | distraction_handling=distract_dismiss_fast | form_interaction=form_contextual | verification=verify_defensive",
+      "mutation_history": [
+        "crossover(0df71b7c\u00d7f71c6c8e at 3)",
+        "mutate(nav_sequential\u2192nav_goal_decompose)",
+        "mutate(form_label_match\u2192form_contextual)"
+      ],
+      "success": true,
+      "steps_completed": [
+        "product_page",
+        "cart_page",
+        "checkout_page",
+        "success"
+      ],
+      "total_actions": 25,
+      "duration": 76.01303005218506,
+      "scores": {
+        "task_completion": 1.0,
+        "efficiency": 0.5,
+        "resilience": 1.0,
+        "strategy": 0.9,
+        "composite": 0.9
+      },
+      "fitness": 0.9,
+      "errors": [],
+      "num_screenshots": 13,
+      "replay_url": null
+    },
+    {
+      "genome_id": "b30b7f15",
+      "generation": 3,
+      "genes": "navigation=nav_goal_decompose | element_selection=elem_text_match | error_recovery=recovery_adaptive | distraction_handling=distract_dismiss_fast | form_interaction=form_contextual | verification=verify_content",
+      "mutation_history": [
+        "crossover(5bfceb0e\u00d7f71c6c8e at 2)",
+        "mutate(nav_observe_first\u2192nav_goal_decompose)",
+        "mutate(form_label_match\u2192form_contextual)",
+        "mutate(verify_defensive\u2192verify_content)"
+      ],
+      "success": true,
+      "steps_completed": [
+        "product_page",
+        "cart_page",
+        "checkout_page",
+        "success"
+      ],
+      "total_actions": 23,
+      "duration": 81.00118923187256,
+      "scores": {
+        "task_completion": 1.0,
+        "efficiency": 0.5,
+        "resilience": 1.0,
+        "strategy": 1.0,
+        "composite": 0.9249999999999999
+      },
+      "fitness": 0.9249999999999999,
+      "errors": [],
+      "num_screenshots": 16,
+      "replay_url": null
+    },
+    {
+      "genome_id": "5f3076e6",
+      "generation": 3,
+      "genes": "navigation=nav_goal_decompose | element_selection=elem_semantic | error_recovery=recovery_adaptive | distraction_handling=distract_dismiss_fast | form_interaction=form_label_match | verification=verify_defensive",
+      "mutation_history": [
+        "crossover(c12987c9\u00d7bf82b7f1 at 4)",
+        "mutate(nav_observe_first\u2192nav_goal_decompose)"
+      ],
+      "success": true,
+      "steps_completed": [
+        "product_page",
+        "cart_page",
+        "checkout_page",
+        "success"
+      ],
+      "total_actions": 25,
+      "duration": 81.04450559616089,
+      "scores": {
+        "task_completion": 1.0,
+        "efficiency": 0.5,
+        "resilience": 1.0,
+        "strategy": 0.9,
+        "composite": 0.9
+      },
+      "fitness": 0.9,
+      "errors": [],
+      "num_screenshots": 19,
+      "replay_url": null
+    },
+    {
+      "genome_id": "405555d2",
+      "generation": 3,
+      "genes": "navigation=nav_sequential | element_selection=elem_semantic | error_recovery=recovery_diagnostic | distraction_handling=distract_systematic_clear_evolved | form_interaction=form_contextual | verification=verify_defensive",
+      "mutation_history": [
+        "crossover(bf82b7f1\u00d70df71b7c at 3)",
+        "mutate(elem_text_match\u2192elem_semantic)",
+        "mutate(recovery_adaptive\u2192recovery_diagnostic)",
+        "llm_evolve(distract_systematic_clear\u2192distract_systematic_clear_evolved)"
+      ],
+      "success": true,
+      "steps_completed": [
+        "product_page",
+        "cart_page",
+        "checkout_page",
+        "success"
+      ],
+      "total_actions": 20,
+      "duration": 89.11220812797546,
+      "scores": {
+        "task_completion": 1.0,
+        "efficiency": 0.8,
+        "resilience": 1.0,
+        "strategy": 0.9,
+        "composite": 0.945
+      },
+      "fitness": 0.945,
+      "errors": [],
+      "num_screenshots": 19,
+      "replay_url": null
+    },
+    {
+      "genome_id": "04b12710",
+      "generation": 3,
+      "genes": "navigation=nav_sequential | element_selection=elem_text_match | error_recovery=recovery_adaptive | distraction_handling=distract_systematic_clear | form_interaction=form_contextual_evolved | verification=verify_defensive",
+      "mutation_history": [
+        "crossover(bf82b7f1\u00d70df71b7c at 1)",
+        "llm_evolve(form_contextual\u2192form_contextual_evolved)"
+      ],
+      "success": true,
+      "steps_completed": [
+        "product_page",
+        "cart_page",
+        "checkout_page",
+        "success"
+      ],
+      "total_actions": 22,
+      "duration": 74.85377359390259,
+      "scores": {
+        "task_completion": 1.0,
+        "efficiency": 0.5,
+        "resilience": 1.0,
+        "strategy": 0.9,
+        "composite": 0.9
+      },
+      "fitness": 0.9,
+      "errors": [],
+      "num_screenshots": 16,
+      "replay_url": null
+    },
+    {
+      "genome_id": "d2ce143d",
+      "generation": 3,
+      "genes": "navigation=nav_sequential | element_selection=elem_text_match | error_recovery=recovery_adaptive | distraction_handling=distract_dismiss_fast | form_interaction=form_placeholder_match | verification=verify_defensive",
+      "mutation_history": [
+        "crossover(bf82b7f1\u00d7c12987c9 at 2)"
+      ],
+      "success": true,
+      "steps_completed": [
+        "product_page",
+        "cart_page",
+        "checkout_page",
+        "success"
+      ],
+      "total_actions": 15,
+      "duration": 54.05729389190674,
+      "scores": {
+        "task_completion": 1.0,
+        "efficiency": 0.8,
+        "resilience": 1.0,
+        "strategy": 0.9,
+        "composite": 0.945
+      },
+      "fitness": 0.945,
+      "errors": [],
+      "num_screenshots": 13,
+      "replay_url": null
+    }
+  ],
+  "extinction_log": [
+    {
+      "genome_id": "cddbe5d8",
+      "generation": 0,
+      "fitness": 1.0,
+      "genes": "navigation=nav_observe_first | element_selection=elem_structural | error_recovery=recovery_diagnostic | distraction_handling=distract_systematic_clear | form_interaction=form_contextual | verification=verify_url"
+    },
+    {
+      "genome_id": "90d3c71d",
+      "generation": 0,
+      "fitness": 0.97,
+      "genes": "navigation=nav_goal_decompose | element_selection=elem_structural | error_recovery=recovery_retry | distraction_handling=distract_systematic_clear | form_interaction=form_contextual | verification=verify_content"
+    },
+    {
+      "genome_id": "89409e14",
+      "generation": 1,
+      "fitness": 0.97,
+      "genes": "navigation=nav_observe_first | element_selection=elem_structural | error_recovery=recovery_diagnostic | distraction_handling=distract_systematic_clear | form_interaction=form_contextual | verification=verify_defensive"
+    },
+    {
+      "genome_id": "fe1dd5d0",
+      "generation": 1,
+      "fitness": 0.97,
+      "genes": "navigation=nav_goal_decompose | element_selection=elem_semantic | error_recovery=recovery_adaptive | distraction_handling=distract_assess_then_dismiss | form_interaction=form_label_match | verification=verify_defensive"
+    },
+    {
+      "genome_id": "71a1e54e",
+      "generation": 1,
+      "fitness": 0.97,
+      "genes": "navigation=nav_sequential | element_selection=elem_structural | error_recovery=recovery_diagnostic | distraction_handling=distract_dismiss_fast | form_interaction=form_label_match | verification=verify_content"
+    },
+    {
+      "genome_id": "69c94492",
+      "generation": 1,
+      "fitness": 0.945,
+      "genes": "navigation=nav_sequential | element_selection=elem_structural | error_recovery=recovery_diagnostic | distraction_handling=distract_assess_then_dismiss | form_interaction=form_placeholder_match | verification=verify_defensive"
+    },
+    {
+      "genome_id": "e1b386e3",
+      "generation": 2,
+      "fitness": 0.97,
+      "genes": "navigation=nav_observe_first | element_selection=elem_text_match | error_recovery=recovery_retry_evolved | distraction_handling=distract_systematic_clear | form_interaction=form_placeholder_match | verification=verify_defensive"
+    },
+    {
+      "genome_id": "57cf774b",
+      "generation": 2,
+      "fitness": 0.97,
+      "genes": "navigation=nav_goal_decompose | element_selection=elem_text_match | error_recovery=recovery_adaptive | distraction_handling=distract_systematic_clear | form_interaction=form_label_match | verification=verify_url"
+    },
+    {
+      "genome_id": "3098e401",
+      "generation": 2,
+      "fitness": 0.97,
+      "genes": "navigation=nav_observe_first | element_selection=elem_structural | error_recovery=recovery_retry_evolved | distraction_handling=distract_systematic_clear | form_interaction=form_label_match | verification=verify_url"
+    },
+    {
+      "genome_id": "e737990c",
+      "generation": 2,
+      "fitness": 0.97,
+      "genes": "navigation=nav_sequential | element_selection=elem_text_match | error_recovery=recovery_adaptive | distraction_handling=distract_systematic_clear | form_interaction=form_placeholder_match_evolved | verification=verify_defensive"
+    },
+    {
+      "genome_id": "a5de2eda",
+      "generation": 2,
+      "fitness": 0.9249999999999999,
+      "genes": "navigation=nav_observe_first | element_selection=elem_semantic | error_recovery=recovery_adaptive | distraction_handling=distract_assess_then_dismiss | form_interaction=form_label_match | verification=verify_defensive"
+    },
+    {
+      "genome_id": "d2ce143d",
+      "generation": 3,
+      "fitness": 0.945,
+      "genes": "navigation=nav_sequential | element_selection=elem_text_match | error_recovery=recovery_adaptive | distraction_handling=distract_dismiss_fast | form_interaction=form_placeholder_match | verification=verify_defensive"
+    },
+    {
+      "genome_id": "f71c6c8e",
+      "generation": 3,
+      "fitness": 0.9249999999999999,
+      "genes": "navigation=nav_sequential | element_selection=elem_text_match | error_recovery=recovery_adaptive | distraction_handling=distract_dismiss_fast | form_interaction=form_label_match | verification=verify_defensive"
+    },
+    {
+      "genome_id": "b30b7f15",
+      "generation": 3,
+      "fitness": 0.9249999999999999,
+      "genes": "navigation=nav_goal_decompose | element_selection=elem_text_match | error_recovery=recovery_adaptive | distraction_handling=distract_dismiss_fast | form_interaction=form_contextual | verification=verify_content"
+    },
+    {
+      "genome_id": "5d4c5117",
+      "generation": 3,
+      "fitness": 0.9,
+      "genes": "navigation=nav_goal_decompose | element_selection=elem_text_match | error_recovery=recovery_adaptive | distraction_handling=distract_dismiss_fast | form_interaction=form_contextual | verification=verify_defensive"
+    },
+    {
+      "genome_id": "5f3076e6",
+      "generation": 3,
+      "fitness": 0.9,
+      "genes": "navigation=nav_goal_decompose | element_selection=elem_semantic | error_recovery=recovery_adaptive | distraction_handling=distract_dismiss_fast | form_interaction=form_label_match | verification=verify_defensive"
+    },
+    {
+      "genome_id": "04b12710",
+      "generation": 3,
+      "fitness": 0.9,
+      "genes": "navigation=nav_sequential | element_selection=elem_text_match | error_recovery=recovery_adaptive | distraction_handling=distract_systematic_clear | form_interaction=form_contextual_evolved | verification=verify_defensive"
+    }
+  ],
+  "config": {
+    "initial_population": 4,
+    "children_per_generation": 6,
+    "survival_rate": 0.5,
+    "num_generations": 4,
+    "llm_mutation_rate": 0.2,
+    "judge_model": "gemini-3-flash-preview",
+    "agent_model": "gemini-2.5-flash",
+    "browser": "local_playwright"
+  }
+}
