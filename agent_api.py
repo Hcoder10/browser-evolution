@@ -28,12 +28,13 @@ DEFAULT_GAUNTLET_URL = os.environ.get("GAUNTLET_URL", "https://browser-evolution
 weave.init(WANDB_PROJECT)
 
 
-async def _run_agent(prompt: str, gauntlet_url: str, level: int, max_steps: int) -> dict:
+async def _run_agent(prompt: str, gauntlet_url: str, level: int, max_steps: int, session_id: str = None) -> dict:
     """Run a browser-use agent against the gauntlet."""
     from browser_use import Agent, Browser
     from browser_use.llm import ChatGoogle
 
-    session_id = f"api-{int(time.time())}"
+    if not session_id:
+        session_id = f"api-{int(time.time())}"
 
     task = f"""{prompt}
 
@@ -132,8 +133,9 @@ def run_agent():
     gauntlet_url = data.get("gauntlet_url", DEFAULT_GAUNTLET_URL)
     level = int(data.get("level", 3))
     max_steps = int(data.get("max_steps", 25))
+    session_id = data.get("session_id", None)
 
-    result = asyncio.run(_run_agent(prompt, gauntlet_url, level, max_steps))
+    result = asyncio.run(_run_agent(prompt, gauntlet_url, level, max_steps, session_id))
     return jsonify(result)
 
 

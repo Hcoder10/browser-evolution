@@ -602,6 +602,36 @@ td { font-size: 15px; }
         </div>
     </div>
 
+    <div class="section">
+        <h2>Live Demo — Run Agents Now</h2>
+        <div class="result-card">
+            <p style="margin-bottom:20px;">Launch real browser agents against the Nightmare Gauntlet (Level 3). Watch the naive agent get trapped while the evolved agent completes checkout.</p>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                <div id="naive-panel" style="background:#0f172a;border-radius:12px;padding:20px;border:1px solid #334155;">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+                        <span style="font-weight:700;color:#ef4444;">Naive Agent</span>
+                        <button onclick="runAgent('naive')" id="naive-btn" class="cta cta-secondary" style="padding:8px 20px;font-size:14px;">Run Naive</button>
+                    </div>
+                    <div id="naive-status" style="font-size:13px;color:#94a3b8;">Ready to launch</div>
+                    <div id="naive-steps" style="margin-top:12px;font-size:13px;"></div>
+                    <div id="naive-result" style="margin-top:12px;"></div>
+                </div>
+                <div id="evolved-panel" style="background:#0f172a;border-radius:12px;padding:20px;border:1px solid #334155;">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+                        <span style="font-weight:700;color:#22c55e;">Evolved Agent</span>
+                        <button onclick="runAgent('evolved')" id="evolved-btn" class="cta cta-secondary" style="padding:8px 20px;font-size:14px;">Run Evolved</button>
+                    </div>
+                    <div id="evolved-status" style="font-size:13px;color:#94a3b8;">Ready to launch</div>
+                    <div id="evolved-steps" style="margin-top:12px;font-size:13px;"></div>
+                    <div id="evolved-result" style="margin-top:12px;"></div>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:16px;">
+                <button onclick="runAgent('naive');runAgent('evolved');" class="cta cta-primary" style="padding:12px 32px;">Race Both Agents</button>
+            </div>
+        </div>
+    </div>
+
     <div class="cta-row">
         <a href="https://wandb.ai/carpediemhari-n-a/browser-evolution/weave" class="cta cta-primary" target="_blank">View W&B Weave Traces</a>
         <a href="/?level=3&sid=visitor" class="cta cta-secondary">Try The Gauntlet</a>
@@ -611,6 +641,129 @@ td { font-size: 15px; }
 <div class="footer">
     <p>Built for the Gemini/DeepMind BrowserUse Competition | <a href="https://wandb.ai/carpediemhari-n-a/browser-evolution/weave" target="_blank">W&B Weave</a></p>
 </div>
+
+<script>
+const AGENT_API = 'https://browser-evolution-agent-production.up.railway.app';
+const GAUNTLET_API = window.location.origin;
+
+const NAIVE_PROMPT = `You are a browser automation assistant. Navigate to the given URL and complete the checkout process. Add the item to your cart, proceed to checkout, fill in the shipping form, and place the order.`;
+
+const EVOLVED_PROMPT = `## NAVIGATION
+Break the overall task into sub-goals. For a checkout flow: 1) Get the product into the cart, 2) Navigate to checkout, 3) Fill shipping info, 4) Complete the order. Scan for the most direct path. Look for alternative paths if needed.
+
+## ELEMENT SELECTION
+Use semantic understanding. Don't just match text — understand PURPOSE from context.
+CRITICAL WARNING: This site is HOSTILE. The large, colorful blue buttons are ALL TRAPS that lead to error pages. The REAL action elements are tiny grey underlined text links, usually at the bottom. Look for small subtle links with arrows. Do NOT click any large blue button. If you see an error page, GO BACK and click the small grey text link instead.
+
+## ERROR RECOVERY
+If stuck for 2+ actions, switch strategies. If clicking buttons fails, try links. If you land on an error/pending page, GO BACK — you clicked a trap. Never repeat failing actions.
+
+## DISTRACTION HANDLING
+Immediately dismiss popups. Look for small grey dismiss links like "No thanks". Do NOT engage with popup content or click colorful CTA buttons in popups.
+
+## FORM INTERACTION
+WARNING: Labels may be DELIBERATELY WRONG. A field labeled "Phone Number" might be for email. Trust field name attribute and input type over visible label. Use: Alex Johnson, alex@example.com, 789 Elm Boulevard, Portland, OR, 97201. After filling, find the REAL submit — tiny grey underlined text, NOT the big blue buttons.
+
+## VERIFICATION
+Trust nothing. Task is complete ONLY with ORDER_CONFIRMED. If you see PAYMENT_PENDING, go back — that is a trap.`;
+
+let polling = {};
+
+async function runAgent(type) {
+    const btn = document.getElementById(type + '-btn');
+    const status = document.getElementById(type + '-status');
+    const steps = document.getElementById(type + '-steps');
+    const result = document.getElementById(type + '-result');
+
+    btn.disabled = true;
+    btn.textContent = 'Running...';
+    btn.style.opacity = '0.5';
+    status.innerHTML = '<span style="color:#f59e0b;">Launching browser agent...</span>';
+    steps.innerHTML = '';
+    result.innerHTML = '';
+
+    const prompt = type === 'naive' ? NAIVE_PROMPT : EVOLVED_PROMPT;
+    const sid = 'live-' + type + '-' + Date.now();
+
+    // Start polling gauntlet status
+    let pollCount = 0;
+    polling[type] = setInterval(async () => {
+        pollCount++;
+        try {
+            const r = await fetch(GAUNTLET_API + '/api/status/' + sid);
+            const d = await r.json();
+            const stepNames = (d.steps || []).map(s => {
+                if (s === 'product_page') return 'Product Page';
+                if (s === 'cart_page') return 'Cart Page';
+                if (s === 'checkout_page') return 'Checkout Page';
+                if (s === 'success') return 'ORDER_CONFIRMED';
+                return s;
+            });
+            if (stepNames.length > 0) {
+                steps.innerHTML = stepNames.map(s =>
+                    '<div style="padding:3px 0;color:' + (s === 'ORDER_CONFIRMED' ? '#22c55e' : '#60a5fa') + ';">&#10003; ' + s + '</div>'
+                ).join('');
+            }
+            const dots = '.'.repeat((pollCount % 3) + 1);
+            status.innerHTML = '<span style="color:#f59e0b;">Agent working' + dots + ' (' + Math.round(pollCount * 3) + 's)</span>';
+        } catch(e) {}
+    }, 3000);
+
+    try {
+        const resp = await fetch(AGENT_API + '/run', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                prompt: prompt,
+                gauntlet_url: GAUNTLET_API,
+                level: 3,
+                max_steps: 25,
+                session_id: sid
+            })
+        });
+        const data = await resp.json();
+
+        clearInterval(polling[type]);
+
+        if (data.success) {
+            status.innerHTML = '<span style="color:#22c55e;font-weight:700;font-size:16px;">PASS — ORDER_CONFIRMED</span>';
+            result.innerHTML = '<div style="background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);border-radius:8px;padding:12px;margin-top:8px;">' +
+                '<div style="color:#22c55e;font-weight:700;">Checkout Complete</div>' +
+                '<div style="color:#94a3b8;font-size:13px;">' + data.total_actions + ' actions | ' + data.duration + 's</div></div>';
+        } else {
+            status.innerHTML = '<span style="color:#ef4444;font-weight:700;font-size:16px;">FAIL — Did not complete checkout</span>';
+            result.innerHTML = '<div style="background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:8px;padding:12px;margin-top:8px;">' +
+                '<div style="color:#ef4444;font-weight:700;">Checkout Failed</div>' +
+                '<div style="color:#94a3b8;font-size:13px;">' + data.total_actions + ' actions | ' + data.duration + 's</div>' +
+                '<div style="color:#94a3b8;font-size:12px;">Steps: ' + (data.steps_completed || []).join(' → ') + '</div></div>';
+        }
+
+        // Final poll for steps
+        try {
+            const r2 = await fetch(GAUNTLET_API + '/api/status/' + sid);
+            const d2 = await r2.json();
+            const stepNames = (d2.steps || []).map(s => {
+                if (s === 'product_page') return 'Product Page';
+                if (s === 'cart_page') return 'Cart Page';
+                if (s === 'checkout_page') return 'Checkout Page';
+                if (s === 'success') return 'ORDER_CONFIRMED';
+                return s;
+            });
+            steps.innerHTML = stepNames.map(s =>
+                '<div style="padding:3px 0;color:' + (s === 'ORDER_CONFIRMED' ? '#22c55e' : '#60a5fa') + ';">&#10003; ' + s + '</div>'
+            ).join('');
+        } catch(e) {}
+
+    } catch(e) {
+        clearInterval(polling[type]);
+        status.innerHTML = '<span style="color:#ef4444;">Error: ' + e.message + '</span>';
+    }
+
+    btn.disabled = false;
+    btn.textContent = 'Run ' + type.charAt(0).toUpperCase() + type.slice(1);
+    btn.style.opacity = '1';
+}
+</script>
 </body></html>"""
 
 @app.route("/demo")
