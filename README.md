@@ -151,7 +151,8 @@ browser-evolution/
 ├── Dockerfile         # Railway Docker config (Python + Playwright + Chromium)
 ├── api/index.py       # Vercel entry point
 ├── vercel.json        # Vercel config
-├── requirements.txt   # Full dependencies
+├── requirements.txt        # Vercel dependencies (Flask only)
+├── requirements-dev.txt    # Local development (all dependencies)
 └── requirements-agent.txt  # Railway agent dependencies
 ```
 
@@ -172,7 +173,7 @@ cd browser-evolution
 python -m venv venv
 source venv/bin/activate  # or venv\Scripts\activate on Windows
 
-pip install -r requirements.txt
+pip install -r requirements-dev.txt
 playwright install chromium
 ```
 

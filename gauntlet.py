@@ -667,8 +667,8 @@ WARNING: Labels may be DELIBERATELY WRONG. A field labeled "Phone Number" might 
 ## VERIFICATION
 Trust nothing. Task is complete ONLY with ORDER_CONFIRMED. If you see PAYMENT_PENDING, go back — that is a trap.`;
 
-let polling = {};
 let timers = {};
+let retries = {};
 
 async function runAgent(type) {
     const btn = document.getElementById(type + '-btn');
@@ -742,10 +742,15 @@ async function runAgent(type) {
         if (e.name === 'AbortError') {
             status.innerHTML = '<span style="color:#ef4444;">Timed out (3 min limit)</span>';
         } else {
-            status.innerHTML = '<span style="color:#ef4444;">Connection error — retrying...</span>';
-            // Auto-retry once after 2s
-            setTimeout(() => runAgent(type), 2000);
-            return;
+            retries[type] = (retries[type] || 0) + 1;
+            if (retries[type] <= 2) {
+                status.innerHTML = '<span style="color:#ef4444;">Connection error — retrying (' + retries[type] + '/2)...</span>';
+                setTimeout(() => runAgent(type), 2000);
+                return;
+            } else {
+                status.innerHTML = '<span style="color:#ef4444;">Agent API unavailable. Try again later.</span>';
+                retries[type] = 0;
+            }
         }
     }
 
