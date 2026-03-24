@@ -6,3 +6,4 @@ weave>=0.50
 python-dotenv>=1.0
 requests>=2.31
 playwright>=1.40
+browserbase>=1.0

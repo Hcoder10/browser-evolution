@@ -1,1 +1,9 @@
 flask>=3.0
+flask-cors>=4.0
+browser-use>=0.12
+google-genai>=1.0
+weave>=0.50
+python-dotenv>=1.0
+requests>=2.31
+playwright>=1.40
+browserbase>=1.0

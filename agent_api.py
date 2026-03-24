@@ -8,8 +8,6 @@ POST /run with a prompt to test against the hostile website.
 import asyncio
 import os
 import time
-import json
-import weave
 import requests
 from flask import Flask, request, jsonify
 from flask_cors import CORS
@@ -24,8 +22,13 @@ GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY", "")
 WANDB_PROJECT = os.environ.get("WANDB_PROJECT", "browser-evolution")
 DEFAULT_GAUNTLET_URL = os.environ.get("GAUNTLET_URL", "https://browser-evolution.vercel.app")
 
-# Initialize Weave
-weave.init(WANDB_PROJECT)
+# Initialize Weave (optional — only if WANDB_API_KEY is set)
+try:
+    import weave
+    if os.environ.get("WANDB_API_KEY"):
+        weave.init(WANDB_PROJECT)
+except Exception:
+    pass
 
 
 async def _run_agent(prompt: str, gauntlet_url: str, level: int, max_steps: int, session_id: str = None) -> dict:
@@ -146,4 +149,4 @@ def health():
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
-    app.run(host="0.0.0.0", port=port)
+    app.run(host="0.0.0.0", port=port, threaded=True)

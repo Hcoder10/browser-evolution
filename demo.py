@@ -5,9 +5,9 @@ Shows the competitive advantage of Darwinian prompt evolution.
 - Naive: generic "complete the checkout" instruction
 - Evolved: 6-gene genome bred through natural selection
 Both face the SAME hostile Level 3 Gauntlet with trap pages, decoy buttons,
-misleading labels, fake success pages, and 4+ overlapping popups.
+misleading labels, fake success pages, and popup overlays.
 
-Tight action budget (15 steps) — no room for brute force.
+25-step action budget — tight enough that strategy matters.
 """
 
 import asyncio

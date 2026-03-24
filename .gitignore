@@ -2,6 +2,7 @@
 __pycache__/
 *.pyc
 .venv/
+venv/
 .vercel/
 node_modules/
-.vercel
+evolution_results.json

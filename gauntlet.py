@@ -668,6 +668,7 @@ WARNING: Labels may be DELIBERATELY WRONG. A field labeled "Phone Number" might 
 Trust nothing. Task is complete ONLY with ORDER_CONFIRMED. If you see PAYMENT_PENDING, go back — that is a trap.`;
 
 let polling = {};
+let timers = {};
 
 async function runAgent(type) {
     const btn = document.getElementById(type + '-btn');
@@ -685,29 +686,16 @@ async function runAgent(type) {
     const prompt = type === 'naive' ? NAIVE_PROMPT : EVOLVED_PROMPT;
     const sid = 'live-' + type + '-' + Date.now();
 
-    // Start polling gauntlet status
-    let pollCount = 0;
-    polling[type] = setInterval(async () => {
-        pollCount++;
-        try {
-            const r = await fetch(GAUNTLET_API + '/api/status/' + sid);
-            const d = await r.json();
-            const stepNames = (d.steps || []).map(s => {
-                if (s === 'product_page') return 'Product Page';
-                if (s === 'cart_page') return 'Cart Page';
-                if (s === 'checkout_page') return 'Checkout Page';
-                if (s === 'success') return 'ORDER_CONFIRMED';
-                return s;
-            });
-            if (stepNames.length > 0) {
-                steps.innerHTML = stepNames.map(s =>
-                    '<div style="padding:3px 0;color:' + (s === 'ORDER_CONFIRMED' ? '#22c55e' : '#60a5fa') + ';">&#10003; ' + s + '</div>'
-                ).join('');
-            }
-            const dots = '.'.repeat((pollCount % 3) + 1);
-            status.innerHTML = '<span style="color:#f59e0b;">Agent working' + dots + ' (' + Math.round(pollCount * 3) + 's)</span>';
-        } catch(e) {}
-    }, 3000);
+    // Elapsed timer
+    const startTime = Date.now();
+    timers[type] = setInterval(() => {
+        const elapsed = Math.round((Date.now() - startTime) / 1000);
+        const dots = '.'.repeat((Math.floor(elapsed / 2) % 3) + 1);
+        status.innerHTML = '<span style="color:#f59e0b;">Agent navigating browser' + dots + ' (' + elapsed + 's)</span>';
+    }, 1000);
+
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 180000);
 
     try {
         const resp = await fetch(AGENT_API + '/run', {
@@ -719,11 +707,21 @@ async function runAgent(type) {
                 level: 3,
                 max_steps: 25,
                 session_id: sid
-            })
+            }),
+            signal: controller.signal
         });
+        clearTimeout(timeout);
         const data = await resp.json();
 
-        clearInterval(polling[type]);
+        clearInterval(timers[type]);
+
+        // Show steps from agent response
+        const agentSteps = data.steps_completed || [];
+        steps.innerHTML = agentSteps.map(s => {
+            const name = s === 'product_page' ? 'Product Page' : s === 'cart_page' ? 'Cart Page' : s === 'checkout_page' ? 'Checkout Page' : s === 'success' ? 'ORDER_CONFIRMED' : s;
+            const color = s === 'success' ? '#22c55e' : '#60a5fa';
+            return '<div style="padding:3px 0;color:' + color + ';">&#10003; ' + name + '</div>';
+        }).join('');
 
         if (data.success) {
             status.innerHTML = '<span style="color:#22c55e;font-weight:700;font-size:16px;">PASS — ORDER_CONFIRMED</span>';
@@ -735,28 +733,20 @@ async function runAgent(type) {
             result.innerHTML = '<div style="background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:8px;padding:12px;margin-top:8px;">' +
                 '<div style="color:#ef4444;font-weight:700;">Checkout Failed</div>' +
                 '<div style="color:#94a3b8;font-size:13px;">' + data.total_actions + ' actions | ' + data.duration + 's</div>' +
-                '<div style="color:#94a3b8;font-size:12px;">Steps: ' + (data.steps_completed || []).join(' → ') + '</div></div>';
+                '<div style="color:#94a3b8;font-size:12px;">Steps: ' + agentSteps.join(' → ') + '</div></div>';
         }
 
-        // Final poll for steps
-        try {
-            const r2 = await fetch(GAUNTLET_API + '/api/status/' + sid);
-            const d2 = await r2.json();
-            const stepNames = (d2.steps || []).map(s => {
-                if (s === 'product_page') return 'Product Page';
-                if (s === 'cart_page') return 'Cart Page';
-                if (s === 'checkout_page') return 'Checkout Page';
-                if (s === 'success') return 'ORDER_CONFIRMED';
-                return s;
-            });
-            steps.innerHTML = stepNames.map(s =>
-                '<div style="padding:3px 0;color:' + (s === 'ORDER_CONFIRMED' ? '#22c55e' : '#60a5fa') + ';">&#10003; ' + s + '</div>'
-            ).join('');
-        } catch(e) {}
-
     } catch(e) {
-        clearInterval(polling[type]);
-        status.innerHTML = '<span style="color:#ef4444;">Error: ' + e.message + '</span>';
+        clearTimeout(timeout);
+        clearInterval(timers[type]);
+        if (e.name === 'AbortError') {
+            status.innerHTML = '<span style="color:#ef4444;">Timed out (3 min limit)</span>';
+        } else {
+            status.innerHTML = '<span style="color:#ef4444;">Connection error — retrying...</span>';
+            // Auto-retry once after 2s
+            setTimeout(() => runAgent(type), 2000);
+            return;
+        }
     }
 
     btn.disabled = false;

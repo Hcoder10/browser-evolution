@@ -37,9 +37,6 @@ RUN playwright install chromium
 
 # Copy app code
 COPY agent_api.py .
-COPY scorers.py .
-COPY genome.py .
-COPY evolution.py .
 
 EXPOSE 8080
 
