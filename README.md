@@ -2,7 +2,7 @@
 
 **Darwinian natural selection breeds AI browser agents that survive hostile websites.**
 
-Built for the [Gemini/DeepMind BrowserUse Competition](https://wandb.ai/carpediemhari-n-a/browser-evolution/weave).
+Built for the [Gemini/DeepMind BrowserUse Competition] (I WON WITH A DIFFERENT PROJECT)
 
 > Can evolution teach an AI to avoid traps, dismiss popups, ignore decoy buttons, and complete checkout on a website that's actively fighting it?
 
