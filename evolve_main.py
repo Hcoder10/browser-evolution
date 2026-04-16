@@ -18,11 +18,10 @@ import time
 import json
 import weave
 import requests
-from google import genai as genai_module
 from dotenv import load_dotenv
 
-from genome import Genome, create_initial_population, create_random_genome
-from evolution import crossover, mutate, llm_mutate_gene, breed_children, cull, tournament_select
+from genome import Genome, create_initial_population
+from evolution import breed_children, cull
 from scorers import compute_fitness, SCORER_WEIGHTS
 from gauntlet import start_gauntlet
 
@@ -120,7 +119,7 @@ The site may use unusual button labels or layouts. Use your judgment to find the
         if USE_BROWSERBASE:
             bb_session, replay_url = create_browserbase_session()
             result_data["replay_url"] = replay_url
-            print(f"[cloud] ", end="", flush=True)
+            print("[cloud] ", end="", flush=True)
 
             browser_session = BrowserSession(
                 cdp_url=bb_session.connect_url,
@@ -159,7 +158,6 @@ The site may use unusual button labels or layouts. Use your judgment to find the
 
         # Extract results from history
         action_names = history.action_names()
-        urls = history.urls()
         errors = history.errors()
         final_result = history.final_result()
 
@@ -257,8 +255,8 @@ async def run_darwinian_evolution() -> dict:
     print(f"   Survival Rate: {SURVIVAL_RATE:.0%} (harsh culling)")
     print(f"   Generations: {NUM_GENERATIONS}")
     print(f"   LLM Mutation: {LLM_MUTATION_RATE:.0%} (Gemini-powered)")
-    print(f"   Agent Brain: gemini-2.5-flash")
-    print(f"   Judge Model: gemini-3-flash-preview (multimodal)")
+    print("   Agent Brain: gemini-2.5-flash")
+    print("   Judge Model: gemini-3-flash-preview (multimodal)")
     print(f"   Browser: {'Browserbase (cloud + replay)' if USE_BROWSERBASE else 'Local Playwright'}")
     print(f"   Gauntlet URL: {GAUNTLET_URL}")
     print("=" * 70)
@@ -269,11 +267,12 @@ async def run_darwinian_evolution() -> dict:
 
     # ── Generation 0: Create initial population ──
     print(f"\n{'=' * 50}")
-    print(f"  GENERATION 0 -- Primordial Soup")
+    print("  GENERATION 0 -- Primordial Soup")
     print(f"{'=' * 50}")
 
     population = create_initial_population(INITIAL_POPULATION)
     mutation_level = 0
+    gen_results = []
 
     for gen in range(NUM_GENERATIONS):
         mutation_level = min(gen, 3)
@@ -350,11 +349,6 @@ async def run_darwinian_evolution() -> dict:
 
     # ── Final Champion ──
     champion_result = max(all_results, key=lambda r: r["fitness"])
-    champion_genome = None
-    for g in population:
-        if g.id == champion_result["genome_id"]:
-            champion_genome = g
-            break
 
     print("\n" + "=" * 70)
     print("CHAMPION GENOME")
@@ -364,7 +358,7 @@ async def run_darwinian_evolution() -> dict:
     print(f"  Fitness: {champion_result['fitness']:.1%}")
     print(f"  Success: {champion_result['success']}")
     print(f"  Genes: {champion_result['genes']}")
-    print(f"\n  Score Breakdown:")
+    print("\n  Score Breakdown:")
     for scorer, score in champion_result["scores"].items():
         if scorer != "composite":
             weight = SCORER_WEIGHTS.get(scorer, 0)
@@ -381,7 +375,7 @@ async def run_darwinian_evolution() -> dict:
     print(f"  Total extinctions: {len(extinction_log)}")
     print(f"  Generations: {NUM_GENERATIONS}")
     print(f"  Champion fitness: {champion_result['fitness']:.1%}")
-    print(f"  Judge model: gemini-3-flash-preview (multimodal, screenshot-grounded)")
+    print("  Judge model: gemini-3-flash-preview (multimodal, screenshot-grounded)")
     print(f"  Browser: {'Browserbase (cloud)' if USE_BROWSERBASE else 'Local Playwright'}")
 
     output = {
@@ -403,7 +397,7 @@ async def run_darwinian_evolution() -> dict:
     with open("evolution_results.json", "w") as f:
         json.dump(output, f, indent=2, default=str)
 
-    print(f"\n  Results saved to evolution_results.json")
+    print("\n  Results saved to evolution_results.json")
     return output
 
 

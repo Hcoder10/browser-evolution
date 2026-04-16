@@ -290,7 +290,7 @@ async def head_to_head_demo() -> dict:
 
     with open("demo_results.json", "w") as f:
         json.dump(output, f, indent=2, default=str)
-    print(f"\nResults saved to demo_results.json")
+    print("\nResults saved to demo_results.json")
 
     return output
 

@@ -11,7 +11,7 @@ import os
 import weave
 from google import genai
 
-from genome import Gene, Genome, GENE_POOLS, GENE_ORDER
+from genome import Gene, Genome, GENE_POOLS
 
 _genai_client = None
 

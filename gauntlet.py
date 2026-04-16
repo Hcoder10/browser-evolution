@@ -10,12 +10,10 @@ Level 3: NIGHTMARE — trap pages, identical decoy buttons, misleading labels,
 Deployed on Vercel (stateless-friendly via ?level= query param).
 """
 
-from flask import Flask, render_template_string, request, jsonify, redirect
+from flask import Flask, render_template_string, request, jsonify
 import threading
 import time
 import hashlib
-import json
-import os
 
 app = Flask(__name__)
 app.secret_key = "gauntlet-2026"
